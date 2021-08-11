@@ -7,30 +7,27 @@ namespace TrurhTableExample
 {
     public partial class frmMain : Form
     {
+        List<Input> _inputs = new List<Input>();
+        TruthTableSolver solver = new TruthTableSolver();
         public frmMain()
         {
             InitializeComponent();
+            userControlInputs1.InputsChanged += _UserControlInputs_Changed;
 
-            //var a = new Input("A", new List<string>() { "FALSE", "TRUE" });
-            //var b = new Input("B", new List<string>() { "FALSE", "TRUE" });
-            //var c = new Input("C", new List<string>() { "FALSE", "TRUE" });
-            //var d = new Input("D", new List<string>() { "FALSE", "TRUE" });
+            //var a = new Input("PratoPrincipal", new List<string>() { "'Arroz'", "'Feijao'", "'Bife'" });
+            //var b = new Input("Acompanhamento", new List<string>() { "'Batata Frita'", "'Pure Batata'" });
 
-            //var inputList = new List<Input> {a , b, c, d};
+            //var inputList = new List<Input> { a, b };
 
-            //TruthTableSolver solver = new TruthTableSolver();
-            //var result = solver.Solve(inputList, "((A OR B) AND C) OR D");
+            //var solver = new TruthTableSolver();
+            //var result = solver.Solve(inputList, "(PratoPrincipal='Arroz')AND(Acompanhamento='Pure Batata')");
 
-            var a = new Input("PratoPrincipal", new List<string>() { "'Arroz'", "'Feijao'", "'Bife'" });
-            var b = new Input("Acompanhamento", new List<string>() { "'Batata Frita'", "'Pure Batata'" });
+            //textBox1.Text = truthTableString(result).ToString();
+        }
 
-            var inputList = new List<Input> { a, b };
-
-            TruthTableSolver solver = new TruthTableSolver();
-            var result = solver.Solve(inputList, "(PratoPrincipal='Arroz')AND(Acompanhamento='Pure Batata')");
-
-
-            textBox1.Text = truthTableString(result).ToString();
+        private void _UserControlInputs_Changed(List<Input> inputs)
+        {
+            _inputs = inputs;
         }
 
         private StringBuilder truthTableString(List<TruthTableLineResult> result)
@@ -53,6 +50,43 @@ namespace TrurhTableExample
                 sbTable.Append("\r\n");
             }
             return sbTable;
+        }
+
+        private void btWriteTable_Click(object sender, System.EventArgs e)
+        {
+            var result = solver.Solve(_inputs, txtExpression.Text);
+            textBox1.Text = truthTableString(result).ToString();
+        }
+
+        private void menuItemExamplesAnd_Click(object sender, System.EventArgs e)
+        {
+            userControlInputs1.ClearInputs();
+            userControlInputs1.AddInput("A");
+            userControlInputs1.AddInput("B");
+            userControlInputs1.AddInput("C");
+            txtExpression.Text = "A AND B AND C";
+            btWriteTable_Click(null, null);
+        }
+
+        private void menuItemExamplesOr_Click(object sender, System.EventArgs e)
+        {
+            userControlInputs1.ClearInputs();
+            userControlInputs1.AddInput("A");
+            userControlInputs1.AddInput("B");
+            userControlInputs1.AddInput("C");
+            txtExpression.Text = "A OR B OR C";
+            btWriteTable_Click(null, null);
+        }
+
+        private void menuItemExamplesComplex_Click(object sender, System.EventArgs e)
+        {
+            userControlInputs1.ClearInputs();
+            userControlInputs1.AddInput("A");
+            userControlInputs1.AddInput("B");
+            userControlInputs1.AddInput("C");
+            userControlInputs1.AddInput("D");
+            txtExpression.Text = "((A OR B) AND C) OR D";
+            btWriteTable_Click(null, null);
         }
     }
 }

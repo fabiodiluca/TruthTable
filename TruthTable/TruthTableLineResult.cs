@@ -1,16 +1,13 @@
-﻿using System.Collections.Generic;
-
-namespace TruthTable
+﻿namespace TruthTable
 {
     public class TruthTableLineResult
     {
-        public Dictionary<string, string> InputValues { get; internal set; }
+        public TruthTableLine InputLine { get; internal set; }
         public string Result { get; internal set; }
 
-
-        public TruthTableLineResult(Dictionary<string, string> inputValues, string result)
+        public TruthTableLineResult(TruthTableLine inputLine, string result)
         {
-            this.InputValues = inputValues;
+            this.InputLine = inputLine;
             this.Result = result;
         }
     }

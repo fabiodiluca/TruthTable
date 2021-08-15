@@ -46,6 +46,7 @@
             this.textBox1.Location = new System.Drawing.Point(12, 187);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(753, 280);
             this.textBox1.TabIndex = 0;
             // 
@@ -106,21 +107,21 @@
             // menuItemExamplesAnd
             // 
             this.menuItemExamplesAnd.Name = "menuItemExamplesAnd";
-            this.menuItemExamplesAnd.Size = new System.Drawing.Size(180, 22);
+            this.menuItemExamplesAnd.Size = new System.Drawing.Size(128, 22);
             this.menuItemExamplesAnd.Text = "AND";
             this.menuItemExamplesAnd.Click += new System.EventHandler(this.menuItemExamplesAnd_Click);
             // 
             // menuItemExamplesOr
             // 
             this.menuItemExamplesOr.Name = "menuItemExamplesOr";
-            this.menuItemExamplesOr.Size = new System.Drawing.Size(180, 22);
+            this.menuItemExamplesOr.Size = new System.Drawing.Size(128, 22);
             this.menuItemExamplesOr.Text = "OR";
             this.menuItemExamplesOr.Click += new System.EventHandler(this.menuItemExamplesOr_Click);
             // 
             // menuItemExamplesComplex
             // 
             this.menuItemExamplesComplex.Name = "menuItemExamplesComplex";
-            this.menuItemExamplesComplex.Size = new System.Drawing.Size(180, 22);
+            this.menuItemExamplesComplex.Size = new System.Drawing.Size(128, 22);
             this.menuItemExamplesComplex.Text = "COMPLEX";
             this.menuItemExamplesComplex.Click += new System.EventHandler(this.menuItemExamplesComplex_Click);
             // 

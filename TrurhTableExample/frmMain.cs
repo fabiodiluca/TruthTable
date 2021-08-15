@@ -8,7 +8,7 @@ namespace TrurhTableExample
     public partial class frmMain : Form
     {
         List<Input> _inputs = new List<Input>();
-        TruthTableSolver solver = new TruthTableSolver();
+        TruthTableSolver solver = new TruthTableSolver(new TruthTableIterativeGenerator());
         public frmMain()
         {
             InitializeComponent();
@@ -32,8 +32,8 @@ namespace TrurhTableExample
 
         private StringBuilder truthTableString(List<TruthTableLineResult> result)
         {
-            StringBuilder sbTable = new StringBuilder();
-            foreach (var input in result[0].InputValues)
+            var sbTable = new StringBuilder();
+            foreach (var input in result[0].InputLine.InputValues)
             {
                 sbTable.Append(input.Key + "\t");
             }
@@ -42,7 +42,7 @@ namespace TrurhTableExample
 
             foreach (var line in result)
             {
-                foreach (var input in line.InputValues)
+                foreach (var input in line.InputLine.InputValues)
                 {
                     sbTable.Append(input.Value + "\t");
                 }
@@ -74,7 +74,9 @@ namespace TrurhTableExample
             userControlInputs1.AddInput("A");
             userControlInputs1.AddInput("B");
             userControlInputs1.AddInput("C");
-            txtExpression.Text = "A OR B OR C";
+            userControlInputs1.AddInput("D");
+            userControlInputs1.AddInput("E");
+            txtExpression.Text = "A OR B OR C OR D OR E";
             btWriteTable_Click(null, null);
         }
 

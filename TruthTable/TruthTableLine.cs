@@ -4,22 +4,22 @@ namespace TruthTable
 {
     public class TruthTableLine
     {
-        public List<KeyValuePair<string, string>> InputValues { get; }
+        public List<InputValue> InputValues { get; }
 
         public TruthTableLine()
         {
-            InputValues = new List<KeyValuePair<string, string>>();
+            InputValues = new List<InputValue>();
         }
 
         public TruthTableLine(string inputName, string inputValue)
         {
-            InputValues = new List<KeyValuePair<string, string>>();
-            InputValues.Add(new KeyValuePair<string, string>(inputName, inputValue));
+            InputValues = new List<InputValue>();
+            InputValues.Add(new InputValue(inputName, inputValue));
         }
 
         public TruthTableLine(TruthTableLine line)
         {
-            InputValues = new List<KeyValuePair<string, string>>();
+            InputValues = new List<InputValue>();
             foreach (var pair in line.InputValues)
                 InputValues.Add(pair);
         }

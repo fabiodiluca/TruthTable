@@ -2,8 +2,9 @@
 using System.Text;
 using System.Windows.Forms;
 using TruthTable;
+using TruthTable.Generators;
 
-namespace TrurhTableExample
+namespace TruthTableExample
 {
     public partial class frmMain : Form
     {
@@ -35,7 +36,7 @@ namespace TrurhTableExample
             var sbTable = new StringBuilder();
             foreach (var input in result[0].InputLine.InputValues)
             {
-                sbTable.Append(input.Key + "\t");
+                sbTable.Append(input.Name + "\t");
             }
             sbTable.Append("Result");
             sbTable.Append("\r\n");

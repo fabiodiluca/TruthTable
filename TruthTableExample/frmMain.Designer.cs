@@ -1,4 +1,4 @@
-﻿namespace TrurhTableExample
+﻿namespace TruthTableExample
 {
     partial class frmMain
     {
@@ -32,7 +32,7 @@
             this.txtExpression = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btWriteTable = new System.Windows.Forms.Button();
-            this.userControlInputs1 = new TrurhTableExample.userControlInputs();
+            this.userControlInputs1 = new TruthTableExample.userControlInputs();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.examplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemExamplesAnd = new System.Windows.Forms.ToolStripMenuItem();

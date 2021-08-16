@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TruthTable.Generators;
 
 namespace TruthTable
 {
@@ -11,7 +12,7 @@ namespace TruthTable
             _truthTable = truthTable;
         }
 
-        public List<TruthTableLineResult>  Solve(List<Input> inputs, string expression)
+        public List<TruthTableLineResult> Solve(List<Input> inputs, string expression)
         {
             var truthTableLines = _truthTable.Create(inputs);
 
@@ -21,17 +22,20 @@ namespace TruthTable
 
             foreach (var line in truthTableLines)
             {
-                expSolver.Parameters.Clear();
-                foreach (var input in line.InputValues)
-                {
-                    expSolver.Parameters.Add(input.Key, input.Value);
-                }
-
-                result.Add(new TruthTableLineResult(line, expSolver.Solve(expression)));
+                result.Add(_SolveLine(expSolver, line, expression));
             }
 
             return result;
         }
 
+        private TruthTableLineResult _SolveLine(ExpressionSolver.Solver solver, TruthTableLine line, string expression)
+        {
+            solver.Parameters.Clear();
+            foreach (var input in line.InputValues)
+            {
+                solver.Parameters.Add(input.Name, input.Value);
+            }
+            return new TruthTableLineResult(line, solver.Solve(expression));
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace TrurhTableExample
+namespace TruthTableExample
 {
     static class Program
     {

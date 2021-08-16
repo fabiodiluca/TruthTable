@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using TruthTable;
 
-namespace TrurhTableExample
+namespace TruthTableExample
 {
     public partial class userControlInputs : UserControl
     {

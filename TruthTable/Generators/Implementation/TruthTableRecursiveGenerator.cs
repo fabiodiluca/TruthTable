@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace TruthTable
+namespace TruthTable.Generators
 {
     /// <summary>
     /// Recursive algorithm for creating the table
@@ -31,7 +31,7 @@ namespace TruthTable
                     foreach (var value in inputs[i].PossibleValues)
                     {
                         tmpTruthTable.Add(new TruthTableLine(truthTableLines[l]));
-                        tmpTruthTable.Last().InputValues.Add(new KeyValuePair<string, string>(inputs[i].Name, value));
+                        tmpTruthTable.Last().InputValues.Add(new InputValue(inputs[i].Name, value));
                     }
                 }
                 truthTableLines = tmpTruthTable;

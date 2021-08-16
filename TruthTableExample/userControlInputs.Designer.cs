@@ -1,5 +1,5 @@
 ﻿
-namespace TrurhTableExample
+namespace TruthTableExample
 {
     partial class userControlInputs
     {

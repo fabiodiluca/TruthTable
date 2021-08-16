@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TruthTable
+namespace TruthTable.Generators
 {
     public interface ITruthTableGenerator
     {

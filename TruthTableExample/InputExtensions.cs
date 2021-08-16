@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TruthTable;
 
-namespace TrurhTableExample
+namespace TruthTableExample
 {
     public static class InputExtensions
     {

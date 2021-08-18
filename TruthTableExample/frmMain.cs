@@ -36,7 +36,7 @@ namespace TruthTableExample
             var sbTable = new StringBuilder();
             foreach (var input in result[0].InputLine.InputValues)
             {
-                sbTable.Append(input.Name + "\t");
+                sbTable.Append(input.InputName + "\t");
             }
             sbTable.Append("Result");
             sbTable.Append("\r\n");

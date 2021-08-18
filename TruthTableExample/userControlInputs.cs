@@ -60,7 +60,7 @@ namespace TruthTableExample
 
         public void AddInput(string name)
         {
-            _inputs.Add(InputExtensions.BinaryInput(name));
+            _inputs.Add(Input.BinaryInput(name));
             listBoxInputs.Items.Add(name);
             _InputChanged();
         }

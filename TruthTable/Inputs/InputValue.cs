@@ -4,11 +4,11 @@
     {
         public InputValue(string name, string value)
         {
-            Name = name;
+            InputName = name;
             Value = value;
         }
 
-        public string Name { get; }
+        public string InputName { get; }
         public string Value { get; }
 
     }

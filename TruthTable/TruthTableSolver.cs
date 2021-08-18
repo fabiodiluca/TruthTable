@@ -3,7 +3,7 @@ using TruthTable.Generators;
 
 namespace TruthTable
 {
-    public class TruthTableSolver
+    public class TruthTableSolver : ITruthTableSolver
     {
         public ITruthTableGenerator _truthTable;
 
@@ -33,7 +33,7 @@ namespace TruthTable
             solver.Parameters.Clear();
             foreach (var input in line.InputValues)
             {
-                solver.Parameters.Add(input.Name, input.Value);
+                solver.Parameters.Add(input.InputName, input.Value);
             }
             return new TruthTableLineResult(line, solver.Solve(expression));
         }

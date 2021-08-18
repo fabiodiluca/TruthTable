@@ -12,5 +12,10 @@ namespace TruthTable
             this.Name = name;
             PossibleValues = possibleValues;
         }
+
+        public static Input BinaryInput(string name)
+        {
+            return new Input(name, new List<string> { "TRUE", "FALSE" });
+        }
     }
 }

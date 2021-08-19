@@ -1,27 +1,14 @@
-﻿using System.Collections.Generic;
-
-namespace TruthTable
+﻿namespace TruthTable
 {
     public class TruthTableLine
     {
-        public List<InputValue> InputValues { get; }
+        public TruthTableLineInputs InputLine { get; internal set; }
+        public string Result { get; internal set; }
 
-        public TruthTableLine()
+        public TruthTableLine(TruthTableLineInputs inputLine, string result)
         {
-            InputValues = new List<InputValue>();
-        }
-
-        public TruthTableLine(string inputName, string inputValue)
-        {
-            InputValues = new List<InputValue>();
-            InputValues.Add(new InputValue(inputName, inputValue));
-        }
-
-        public TruthTableLine(TruthTableLine line)
-        {
-            InputValues = new List<InputValue>();
-            foreach (var pair in line.InputValues)
-                InputValues.Add(pair);
+            this.InputLine = inputLine;
+            this.Result = result;
         }
     }
 }

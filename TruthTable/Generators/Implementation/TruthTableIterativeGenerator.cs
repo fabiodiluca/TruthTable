@@ -13,16 +13,16 @@ namespace TruthTable.Generators
 
         }
 
-        public List<TruthTableLine> Create(List<Input> inputs)
+        public List<TruthTableLineInputs> Create(List<Input> inputs)
         {
             var counters = new TruthTableIterativeValueCounters(inputs);
 
             var permutations = inputs.CountPermutations();
 
-            var ret = new List<TruthTableLine>();
+            var ret = new List<TruthTableLineInputs>();
             for (int cPermutation = 0; cPermutation < permutations; cPermutation++)
             {
-                var line = new TruthTableLine();
+                var line = new TruthTableLineInputs();
 
                 foreach (var input in inputs)
                 {

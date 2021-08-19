@@ -4,6 +4,6 @@ namespace TruthTable.Generators
 {
     public interface ITruthTableGenerator
     {
-        List<TruthTableLine> Create(List<Input> inputs);
+        List<TruthTableLineInputs> Create(List<Input> inputs);
     }
 }

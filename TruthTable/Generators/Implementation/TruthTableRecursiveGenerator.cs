@@ -13,24 +13,24 @@ namespace TruthTable.Generators
 
         }
 
-        public List<TruthTableLine> Create(List<Input> inputs)
+        public List<TruthTableLineInputs> Create(List<Input> inputs)
         {
-            var truthTableLines = new List<TruthTableLine>();
+            var truthTableLines = new List<TruthTableLineInputs>();
 
             foreach (var value in inputs[0].PossibleValues)
             {
-                var line = new TruthTableLine(inputs[0].Name, value);
+                var line = new TruthTableLineInputs(inputs[0].Name, value);
                 truthTableLines.Add(line);
             }
 
             for (int i = 1; i < inputs.Count; i++)
             {
-                var tmpTruthTable = new List<TruthTableLine>();
+                var tmpTruthTable = new List<TruthTableLineInputs>();
                 for (int l = 0; l < truthTableLines.Count; l++)
                 {
                     foreach (var value in inputs[i].PossibleValues)
                     {
-                        tmpTruthTable.Add(new TruthTableLine(truthTableLines[l]));
+                        tmpTruthTable.Add(new TruthTableLineInputs(truthTableLines[l]));
                         tmpTruthTable.Last().InputValues.Add(new InputValue(inputs[i].Name, value));
                     }
                 }

@@ -31,7 +31,7 @@ namespace TruthTableExample
             _inputs = inputs;
         }
 
-        private StringBuilder truthTableString(List<TruthTableLineResult> result)
+        private StringBuilder truthTableString(List<TruthTableLine> result)
         {
             var sbTable = new StringBuilder();
             foreach (var input in result[0].InputLine.InputValues)

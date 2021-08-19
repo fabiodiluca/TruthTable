@@ -4,6 +4,6 @@ namespace TruthTable
 {
     public interface ITruthTableSolver
     {
-        List<TruthTableLineResult> Solve(List<Input> inputs, string expression);
+        List<TruthTableLine> Solve(List<Input> inputs, string expression);
     }
 }

@@ -12,11 +12,11 @@ namespace TruthTable
             _truthTable = truthTable;
         }
 
-        public List<TruthTableLineResult> Solve(List<Input> inputs, string expression)
+        public List<TruthTableLine> Solve(List<Input> inputs, string expression)
         {
             var truthTableLines = _truthTable.Create(inputs);
 
-            var result = new List<TruthTableLineResult>();
+            var result = new List<TruthTableLine>();
 
             var expSolver = new ExpressionSolver.Solver();
 
@@ -28,14 +28,14 @@ namespace TruthTable
             return result;
         }
 
-        private TruthTableLineResult _SolveLine(ExpressionSolver.Solver solver, TruthTableLine line, string expression)
+        private TruthTableLine _SolveLine(ExpressionSolver.Solver solver, TruthTableLineInputs line, string expression)
         {
             solver.Parameters.Clear();
             foreach (var input in line.InputValues)
             {
                 solver.Parameters.Add(input.InputName, input.Value);
             }
-            return new TruthTableLineResult(line, solver.Solve(expression));
+            return new TruthTableLine(line, solver.Solve(expression));
         }
     }
 }

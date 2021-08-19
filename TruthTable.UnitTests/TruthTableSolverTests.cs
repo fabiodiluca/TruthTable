@@ -9,7 +9,7 @@ namespace TruthTable.UnitTests
 {
     public class TruthTableSolverTests
     {
-        List<TruthTableLine> tableLines;
+        List<TruthTableLineInputs> tableLines;
         Mock<ITruthTableGenerator> truthTableGenerator;
         TruthTableSolver truthTableSolver;
 
@@ -28,10 +28,10 @@ namespace TruthTable.UnitTests
         /// Adding only one line for testing
         /// </summary>
         /// <returns></returns>
-        private List<TruthTableLine> _TableLines()
+        private List<TruthTableLineInputs> _TableLines()
         {
-            var lines = new List<TruthTableLine>();
-            var line = new TruthTableLine();
+            var lines = new List<TruthTableLineInputs>();
+            var line = new TruthTableLineInputs();
             line.InputValues.Add(new InputValue("A", "FALSE"));
             line.InputValues.Add(new InputValue("B", "FALSE"));
             line.InputValues.Add(new InputValue("C", "FALSE"));

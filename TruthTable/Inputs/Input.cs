@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ExpressionSolver;
+using System.Collections.Generic;
 
 namespace TruthTable
 {
@@ -15,7 +16,7 @@ namespace TruthTable
 
         public static Input BinaryInput(string name)
         {
-            return new Input(name, new List<string> { "TRUE", "FALSE" });
+            return new Input(name, new List<string> { TokenValueConstants.TRUE, TokenValueConstants.FALSE });
         }
     }
 }
